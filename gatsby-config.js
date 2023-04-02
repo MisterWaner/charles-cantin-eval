@@ -2,22 +2,24 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
-  siteMetadata: {
-    title: `front_gatsby`,
-    siteUrl: `https://www.yourdomain.tld`
-  },
-  plugins: [{
-    resolve: 'gatsby-source-contentful',
-    options: {
-      "accessToken": "",
-      "spaceId": ""
-    }
-  }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "images",
-      "path": "./src/images/"
-    },
-    __key: "images"
-  }]
+    plugins: [
+        {
+            resolve: 'gatsby-source-contentful',
+            options: {
+                "accessToken": "F3DW4zwzjDZuq8AyjQHxtp3AW5IpGcH41fQUJOeFiC0",
+                "spaceId": "h4el0ml37q89"
+            }
+        },
+        "gatsby-plugin-image",
+        "gatsby-plugin-sharp",
+        "gatsby-transformer-sharp", {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+                "name": "images",
+                "path": "./src/images/"
+            },
+            __key: "images"
+        },
+        `gatsby-plugin-netlify`
+    ]
 };
