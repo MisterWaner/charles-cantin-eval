@@ -20,14 +20,14 @@ const pricing = ({ data }) => {
                     <h1>Tarifs et Prestations</h1>
                     <div className={styles.cardContainer}>
                         {/* Map through datas to display list of cards for prices & prestations */}
-                        {data.allStrapiPrestation.edges.map(( {node}, i) => (
+                        {data.allContentfulPrestation.edges.map(( {node}, i) => (
                             <div className={styles.card} key={i}>
                                 <div className={styles.cardHeader}>
                                     <h3>{node.label}</h3>
                                 </div>
                                 <div className={styles.cardBody}>
                                     <GatsbyImage 
-                                    image={node.image.localFile.childrenImageSharp[0].gatsbyImageData} 
+                                    image={node.image.gatsbyImageData} 
                                     alt="" 
                                     className={styles.cardImage} />
                                     <p className={styles.cardText}>
@@ -52,20 +52,16 @@ const pricing = ({ data }) => {
 //Query graphql that fetch data from api
 export const query = graphql`
     query Card {
-        allStrapiPrestation {
+        allContentfulPrestation {
             edges {
                 node {
-                    description
                     id
-                    label
                     price
+                    description
+                    label
                     image {
-                        localFile {
-                            childrenImageSharp {
-                                gatsbyImageData(width: 300)
-                            }
-                        }
-                    }
+                        gatsbyImageData(width: 300)
+                    }       
                 }
             }
         }

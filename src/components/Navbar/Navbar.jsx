@@ -3,9 +3,24 @@ import '../../styles/navbar.css';
 import Camera from './camera-rotate-solid.svg';
 import EyeSlash from './eye-slash-solid.svg';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { graphql, useStaticQuery, Link } from 'gatsby';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 
 export const Navbar = () => {
+
+    const query = useStaticQuery(graphql`
+        query logo {
+            file(relativePath: {eq: "logo-charles-cantin-bgl.png"}) {
+                childImageSharp {
+                    gatsbyImageData(width: 150, placeholder: BLURRED)
+                }
+            }
+        }   
+    
+    `)
+
+    console.log(query);
+    
+    const logo = getImage(query.file.childImageSharp.gatsbyImageData)
 
     //State that allow to toggle menu when screen size decrease
     const [toggleMenu, setToggleMenu] = useState(false);
@@ -26,22 +41,10 @@ export const Navbar = () => {
         }
     }, [])
 
-    //query to fetch data
-    const data = useStaticQuery(graphql`
-    query Logo {
-        file(relativePath: {eq: "logo-charles-cantin-bgl.png"}) {
-          childImageSharp {
-            gatsbyImageData(width: 150, placeholder: BLURRED)
-          }
-        }
-      }
-    `);
-
-    const logo = getImage(data.file.childImageSharp.gatsbyImageData)
 
     return (
         <nav>
-            <GatsbyImage className='logo' image={logo} alt="logo Charles Cantin" />
+            <GatsbyImage image={logo} />
             {(toggleMenu || screenWidth > 890) && (
                 <ul className='navbar-list'>
                     <li>
@@ -67,21 +70,21 @@ export const Navbar = () => {
                 </ul>
             )}
 
-            {toggleMenu ? 
+            {toggleMenu ?
                 <button
-                onClick={toggleNav}
-                className="btn2"
+                    onClick={toggleNav}
+                    className="btn2"
                 >
                     <img id='close-menu' src={EyeSlash} alt="eye icon" />
                 </button>
-                :   <button
-                onClick={toggleNav}
-                className="btn1"
+                : <button
+                    onClick={toggleNav}
+                    className="btn1"
                 >
                     <img id='open-menu' src={Camera} alt="camera icon" />
-                </button> }
-            
-            
+                </button>}
+
+
         </nav>
     )
 }

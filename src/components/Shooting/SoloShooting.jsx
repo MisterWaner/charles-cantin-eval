@@ -7,20 +7,15 @@ export const SoloShooting = () => {
 
     const data = useStaticQuery(graphql`
     query shooting {
-        allStrapiShooting {
+        allContentfulShooting {
             edges {
                 node {
+                    contentful_id
                     titre
-                    strapi_id
                     images {
-                        localFile {
-                            childrenImageSharp {
-                                gatsbyImageData(width: 500, placeholder: BLURRED)
-                            }
-                        }
+                        gatsbyImageData(placeholder: BLURRED, width: 500)
                     }
-                    id
-                }
+                } 
             }
         }
     }
@@ -28,17 +23,17 @@ export const SoloShooting = () => {
 
     console.log(data);
 
-    const titre = data.allStrapiShooting.edges.map(({ node }) => {
+    const titre = data.allContentfulShooting.edges.map(({ node }) => {
         return node.titre
     })
 
     console.log(titre);
 
-    const images = data.allStrapiShooting.edges.map(({ node }) => {
+    const images = data.allContentfulShooting.edges.map(({ node }) => {
         return node.images
     })
     console.log(images);
-    console.log(images[4][0]);
+    console.log(images[4]);
 
     return (
         <section className='shooting-container'>
@@ -46,7 +41,7 @@ export const SoloShooting = () => {
             <div className="images-container">
                 {
                     images[4].map(image => (
-                        <GatsbyImage image={image.localFile.childrenImageSharp[0].gatsbyImageData} alt="portraits" />
+                        <GatsbyImage image={image.gatsbyImageData} alt="portraits" />
                     ))
                 }
             </div>

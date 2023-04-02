@@ -7,38 +7,38 @@ export const EventShooting = () => {
 
     const data = useStaticQuery(graphql`
     query shooting {
-        allStrapiShooting {
+        allContentfulShooting {
             edges {
                 node {
+                    contentful_id
                     titre
-                    strapi_id
                     images {
-                        localFile {
-                            childrenImageSharp {
-                                gatsbyImageData(width: 500, placeholder: BLURRED)
-                            }
-                        }
+                        gatsbyImageData(placeholder: BLURRED, width: 500)
                     }
-                    id
-                }
+                } 
             }
         }
     }
     `)
 
+
+
     console.log(data);
 
-    const titre = data.allStrapiShooting.edges.map(({ node }) => {
+    const titre = data.allContentfulShooting.edges.map(({ node }) => {
         return node.titre
     })
 
     console.log(titre);
 
-    const images = data.allStrapiShooting.edges.map(({ node }) => {
+    const images = data.allContentfulShooting.edges.map(({ node }) => {
         return node.images
     })
+
+    console.log(data);
+
     console.log(images);
-    console.log(images[0][0]);
+    console.log(images[0]);
 
     return (
         <section className='shooting-container'>
@@ -46,7 +46,7 @@ export const EventShooting = () => {
             <div className="images-container">
                 {
                     images[0].map(image => (
-                        <GatsbyImage image={image.localFile.childrenImageSharp[0].gatsbyImageData} alt="baptême et mariage" />
+                        <GatsbyImage image={image.gatsbyImageData} alt="baptême et mariage" />
                     ))
                 }
             </div>

@@ -7,38 +7,36 @@ export const DuoShooting = () => {
 
     const data = useStaticQuery(graphql`
     query shooting {
-        allStrapiShooting {
+        allContentfulShooting {
             edges {
                 node {
+                    contentful_id
                     titre
-                    strapi_id
                     images {
-                        localFile {
-                            childrenImageSharp {
-                                gatsbyImageData(width: 500, placeholder: BLURRED)
-                            }
-                        }
+                        gatsbyImageData(placeholder: BLURRED, width: 500)
                     }
-                    id
-                }
+                } 
             }
         }
     }
     `)
 
+
+
     console.log(data);
 
-    const titre = data.allStrapiShooting.edges.map(({ node }) => {
+    const titre = data.allContentfulShooting.edges.map(({ node }) => {
         return node.titre
     })
 
     console.log(titre);
 
-    const images = data.allStrapiShooting.edges.map(({ node }) => {
+    const images = data.allContentfulShooting.edges.map(({ node }) => {
         return node.images
     })
+
     console.log(images);
-    console.log(images[2][0]);
+    console.log(images[2]);
 
     return (
         <section className='shooting-container'>
@@ -46,7 +44,7 @@ export const DuoShooting = () => {
             <div className="images-container">
                 {
                     images[2].map(image => (
-                        <GatsbyImage image={image.localFile.childrenImageSharp[0].gatsbyImageData} alt="photos de couple" />
+                        <GatsbyImage image={image.gatsbyImageData}  alt="photos de couple" />
                     ))
                 }
             </div>
