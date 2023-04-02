@@ -1,0 +1,32 @@
+.gallery {
+    width: 100%;
+}
+.gallery section {
+    margin: 25px auto;
+}
+.buttonContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.buttonContainer button {
+    color: #f1f1f1;
+    font-size: 22px;
+    background: none;
+    outline: none;
+    border: none;
+}
+.buttonContainer button:hover {
+    cursor: pointer;
+    color: #000;
+    text-shadow: 1px 1px 2px #f1f1f1;
+}
+
+/* Responsive */
+@media screen and (max-width: 800px){
+    .buttonContainer {
+        flex-direction: column;
+    }
+}
+

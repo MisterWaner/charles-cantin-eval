@@ -1,0 +1,43 @@
+.pricing {
+    width: 100%;
+}
+.cardContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card {
+    width: 350px;
+    height: 450px;
+    background: #f1f1f1b2;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+    margin: 25px 15px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 255, 0.5);
+}
+.cardHeader {
+    padding: 20px;
+}
+.cardHeader h3 {
+    text-transform: uppercase;
+}
+.cardBody {
+    padding: 0 15px;
+}
+.cardImage {
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.cardText {
+    font-weight: 100;
+    text-align: left;
+    padding: 0 10px;
+}
+.cardFooter {
+    padding: 15px;
+}

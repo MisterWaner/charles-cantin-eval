@@ -1,0 +1,35 @@
+.shooting-container {
+    width: 100%;
+    margin-bottom: 25px;
+}
+.shooting-container h3 {
+    color: #000;
+    text-align: center;
+    font-family: "Autography", cursive;
+    font-size: 40px;
+    font-weight: 400;
+}
+.images-container {
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 3fr));
+    gap: 15px;
+    margin: 10px auto;
+
+}
+.images-container img {
+    width: 100%;
+    border-radius: 10px;
+
+}
+/* Responsive */
+@media screen and (max-width: 900px) {
+    .images-container {
+        grid-template-columns: repeat(2, minmax(0, 2fr));
+    }
+}
+@media screen and (max-width: 690px) {
+    .images-container {
+        grid-template-columns: minmax(0, 2fr);
+    }
+}

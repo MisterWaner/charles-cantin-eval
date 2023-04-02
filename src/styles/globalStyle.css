@@ -1,0 +1,102 @@
+@font-face {
+    font-family: "Autography";
+    src: url("../assets/fonts/Autography.otf") format("opentype");
+            
+}
+@font-face {
+    font-family: "Sunflower";
+    src: url('../assets/fonts/MADE\ Sunflower\ PERSONAL\ USE.otf') format("opentype");
+}
+/* RESET*/
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: "Sunflower", Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #9bfbff 0%, #18c9c7 50%, #1900ff 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+/* Global */
+h1 {
+    text-align: center;
+    margin: 50px 0;
+    font-family: "Autography", cursive;
+    font-size: 45px;
+    text-decoration: underline;
+    color: #000;
+}
+h2, h3 {
+    color: #000;
+}
+/* Homepage*/
+.header {
+    width: 100%;
+    height: 100vh;
+    background: url('../assets/images/hero-image.jpg');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.header .main-title {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.header .main-title h2 {
+    font-family: "Autography", cursive;
+    font-size: 75px;
+}
+.header .main-title #title-one {
+    margin-left: 75px;
+}
+.header .main-title #title-two {
+    margin-right: 150px;
+}
+
+/* Layout */
+.main-container {
+    max-width: 1000px;
+    margin: 25px auto;
+} 
+
+/* RESPONSIVE*/
+@media screen and (max-width: 1100px) {
+    .header .main-title #title-two {
+        margin-right: 75px;
+    }
+    .main-container {
+        width: 90%;
+        margin: 15px auto;
+    }
+}
+@media screen and (max-width: 920px) {
+    .header .main-title h2 {
+        font-size: 50px;
+    }
+}
+@media screen and (max-width: 690px) {
+    .header .main-title {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .header .main-title h2 {
+        font-size: 65px;
+    }
+    .header .main-title #title-one {
+        margin-left: 0;
+        margin-bottom: 100px;
+    }
+    .header .main-title #title-two {
+        margin-right: 0;
+        color: #f1f1f1;
+    }
+}
