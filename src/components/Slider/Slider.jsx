@@ -11,13 +11,13 @@ export const Slider = () => {
 
     const data = useStaticQuery(graphql`
         query sliderImg {
-            allFile(filter: {relativeDirectory: {eq: "slider"}}) {
+            allContentfulCaroussel {
                 edges {
                     node {
-                        base
                         id
-                        childImageSharp {
-                            gatsbyImageData(width: 900, formats: JPG)
+                        titre
+                        image {
+                            gatsbyImageData(width: 900, quality: 90, placeholder: BLURRED)
                         }
                     }
                 }
@@ -25,8 +25,8 @@ export const Slider = () => {
         }
     `);
 
-    const images = data.allFile.edges.map(( { node }) => {
-        return node.childImageSharp.gatsbyImageData
+    const images = data.allContentfulCaroussel.edges.map(( { node }) => {
+        return node.image.gatsbyImageData
     })
 
     console.log(images);
@@ -34,9 +34,9 @@ export const Slider = () => {
 
     return (
         <Carousel>
-            {data.allFile.edges.map(({ node }) => (
+            {data.allContentfulCaroussel.edges.map(({ node }) => (
                 <Carousel.Item key={ node.id }>
-                    <GatsbyImage className='d-block w-100 rounded'  image={node.childImageSharp.gatsbyImageData} alt={node.base} />
+                    <GatsbyImage className='d-block w-100 rounded'  image={node.image.gatsbyImageData} alt={node.titre} />
                 </Carousel.Item>
             ))}
         </Carousel>

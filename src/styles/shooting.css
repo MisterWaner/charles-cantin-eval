@@ -11,9 +11,8 @@
 }
 .images-container {
     max-width: 1000px;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 3fr));
-    gap: 15px;
+    display: flex;
+    flex-wrap: wrap;
     margin: 10px auto;
 
 }
