@@ -2,25 +2,10 @@ import React, { useState, useEffect } from 'react';
 import '../../styles/navbar.css';
 import Camera from './camera-rotate-solid.svg';
 import EyeSlash from './eye-slash-solid.svg';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { Link, graphql, useStaticQuery } from 'gatsby';
+import { Link } from 'gatsby';
 
 export const Navbar = () => {
 
-    const query = useStaticQuery(graphql`
-        query logo {
-            file(relativePath: {eq: "logo-charles-cantin-bgl.png"}) {
-                childImageSharp {
-                    gatsbyImageData(width: 150, placeholder: BLURRED)
-                }
-            }
-        }   
-    
-    `)
-
-    console.log(query);
-    
-    const logo = getImage(query.file.childImageSharp.gatsbyImageData)
 
     //State that allow to toggle menu when screen size decrease
     const [toggleMenu, setToggleMenu] = useState(false);
@@ -44,7 +29,7 @@ export const Navbar = () => {
 
     return (
         <nav>
-            <GatsbyImage image={logo} />
+            <img className='logo' src="/images/logo-charles-cantin-bgl.png" alt="" />
             {(toggleMenu || screenWidth > 890) && (
                 <ul className='navbar-list'>
                     <li>

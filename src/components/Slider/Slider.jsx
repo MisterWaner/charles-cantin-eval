@@ -11,21 +11,25 @@ export const Slider = () => {
 
     const data = useStaticQuery(graphql`
         query sliderImg {
-            allFile(filter: {relativeDirectory: {eq: "slider"}}, sort: {base: ASC}) {
+            allFile(filter: {relativeDirectory: {eq: "slider"}}) {
                 edges {
                     node {
-                        id
                         base
+                        id
                         childImageSharp {
-                            gatsbyImageData(
-                                width: 900
-                            )
+                            gatsbyImageData(width: 900, formats: JPG)
                         }
                     }
                 }
             }
         }
     `);
+
+    const images = data.allFile.edges.map(( { node }) => {
+        return node.childImageSharp.gatsbyImageData
+    })
+
+    console.log(images);
 
 
     return (

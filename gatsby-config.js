@@ -10,24 +10,23 @@ module.exports = {
                 "spaceId": "h4el0ml37q89"
             }
         },
-        "gatsby-plugin-image",
-        "gatsby-plugin-sharp",
-        "gatsby-transformer-sharp", 
+        `gatsby-plugin-image`,
+        `gatsby-plugin-sharp`,
+        `gatsby-transformer-sharp`,
         {
             resolve: 'gatsby-source-filesystem',
             options: {
-                "name": "images",
-                "path": "./src/assets/images/"
+                name: "images",
+                path: "./src/assets/images/"
             },
-            __key: "images"
         },
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-              name: `pages`,
-              path: `./src/pages`
+                name: `pages`,
+                path: `./src/pages`
             },
-          },
+        },
         `gatsby-plugin-netlify`
     ]
 };
