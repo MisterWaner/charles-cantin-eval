@@ -9,13 +9,13 @@ export const Navbar = () => {
 
     //State that allow to toggle menu when screen size decrease
     const [toggleMenu, setToggleMenu] = useState(false);
-    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-
+    
     const toggleNav = () => {
         setToggleMenu(!toggleMenu)
     }
-
+    
     useEffect(() => {
+        const [screenWidth, setScreenWidth] = useState(window.innerWidth);
         const changeWidth = () => {
             setScreenWidth(window.innerWidth);
 
