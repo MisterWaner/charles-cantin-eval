@@ -16,7 +16,7 @@ export const FormContact = () => {
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: new URLSearchParams(formData).toString()
         })
-        .then(() => navigate('../../pages/thanks.jsx'))
+        .then(() => navigate('../thanks'))
         .catch(error => alert(error));
     }
 
