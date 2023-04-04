@@ -9,26 +9,23 @@ export const Navbar = () => {
 
     //State that allow to toggle menu when screen size decrease
     const [toggleMenu, setToggleMenu] = useState(false);
-
-    if(typeof window !== undefined) {
-        const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-
-        useEffect(() => {
-            const changeWidth = () => {
-                setScreenWidth(window.innerWidth);
-    
-            }
-            window.addEventListener('resize', changeWidth);
-            return () => {
-                window.removeEventListener('resize', changeWidth);
-            }
-        }, []);
-    }
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
     const toggleNav = () => {
         setToggleMenu(!toggleMenu)
     }
-    
+
+    useEffect(() => {
+        const changeWidth = () => {
+            setScreenWidth(window.innerWidth);
+
+        }
+        window.addEventListener('resize', changeWidth);
+        return () => {
+            window.removeEventListener('resize', changeWidth);
+        }
+    }, []);
+
     return (
         <nav>
             <img className='logo' src="/images/logo-charles-cantin-bgl.png" alt="" />

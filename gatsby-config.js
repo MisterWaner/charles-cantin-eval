@@ -2,6 +2,9 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
+    siteMetadata: {
+        title: `Charles-Cantin Photographe`
+    },
     plugins: [
         {
             resolve: 'gatsby-source-contentful',
@@ -27,6 +30,9 @@ module.exports = {
                 path: `./src/pages`
             },
         },
-        `gatsby-plugin-netlify`
-    ]
+        `gatsby-plugin-netlify`,
+    ],
+    flags: {
+        DEV_SSR: true
+    }
 };
