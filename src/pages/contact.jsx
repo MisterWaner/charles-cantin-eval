@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Layout from '../components/Layout/Layout';
-import { Navbar } from '../components/Navbar/Navbar';
+import { Header } from '../components/Navbar/Navbar';
 import { FormContact } from '../components/Form/Form';
 import Phone from '../assets/images/phone-solid.svg';
 import At from '../assets/images/at-solid.svg';
@@ -14,7 +14,7 @@ const Contact = () => {
 
     return (
         <>
-            <Navbar />
+            <Header />
             <Layout>
                 <div className={styles.contact}>
                     <h1>Contactez-moi</h1>

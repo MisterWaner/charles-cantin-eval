@@ -5,7 +5,7 @@ import { DuoShooting } from '../components/Shooting/DuoShooting';
 import { SoloShooting } from '../components/Shooting/SoloShooting';
 import { BabyShooting } from '../components/Shooting/BabyShooting';
 import { PregnantShooting } from '../components/Shooting/PregnantShooting';
-import { Navbar } from '../components/Navbar/Navbar';
+import { Header } from '../components/Navbar/Navbar';
 import { Slider } from '../components/Slider/Slider';
 import Layout from '../components/Layout/Layout';
 import * as styles from '../styles/gallery.module.css';
@@ -25,7 +25,7 @@ const Gallery = () => {
 
     return (
         <>
-            <Navbar />
+            <Header />
             <Layout>
                 <div className={styles.gallery}>
                     <h1>Galerie</h1>

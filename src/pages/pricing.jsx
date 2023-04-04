@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Navbar } from '../components/Navbar/Navbar';
+import { Header } from '../components/Navbar/Navbar';
 import Layout from '../components/Layout/Layout';
 import * as styles from '../styles/pricing.module.css';
 import { GatsbyImage } from 'gatsby-plugin-image';
@@ -14,7 +14,7 @@ const pricing = ({ data }) => {
     return (
 
         <>
-            <Navbar />
+            <Header />
             <Layout>
                 <div className={styles.pricing}>
                     <h1>Tarifs et Prestations</h1>

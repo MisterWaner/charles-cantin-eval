@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar } from '../components/Navbar/Navbar';
+import { Header } from '../components/Navbar/Navbar';
 import Layout from '../components/Layout/Layout';
 
 
@@ -7,7 +7,7 @@ import Layout from '../components/Layout/Layout';
 const thanks = () => {
     return (
         <>
-            <Navbar />
+            <Header />
             <Layout>
                 <h1>Merci</h1>
                 <p className='text-black fs-4'>Votre message a été correctement envoyé !</p>
