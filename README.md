@@ -1,10 +1,10 @@
 <p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+  <a href="https://charles-cantin-photographe-eval-studi.netlify.app">
+    <img alt="logo charles cantin photographe" src="./src/assets/images/logo-charles-cantin-bgl.svg" width="60" />
   </a>
 </p>
 <h1 align="center">
-  Gatsby Minimal Starter
+  Charles Cantin Photographe
 </h1>
 
 ## 🚀 Quick start
