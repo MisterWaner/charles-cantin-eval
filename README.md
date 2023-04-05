@@ -1,49 +1,61 @@
 <p align="center">
   <a href="https://charles-cantin-photographe-eval-studi.netlify.app">
-    <img alt="logo charles cantin photographe" src="./src/assets/images/logo-charles-cantin-bgl.svg" width="60" />
+    <img alt="logo charles cantin photographe" src="./src/assets/images/logo-charles-cantin-bgl.svg" width="250" />
   </a>
 </p>
 <h1 align="center">
   Charles Cantin Photographe
 </h1>
 
-## 🚀 Quick start
 
-1.  **Create a Gatsby site.**
+## Project
+I realized this project for an evaluation. 
+It's a portfolio for photographer made with Gatsby JS that get data from Contentful CMS. It's deploy on netlify.
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+
+## Install project on your machine
+
+
+1.  **Clone project**
+
+    Clone project from my repository
 
     ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
+    $ git clone https://github.com/MisterWaner/charles-cantin-eval.git
     ```
 
-2.  **Start developing.**
+2.  **Install dependencies.**
 
-    Navigate into your new site’s directory and start it up.
+    Next you need to install dependencies of project. To do that you need to run :
 
     ```shell
-    cd my-gatsby-site/
+    npm install
+    ```
+
+3.  **Last step: deploy in localhost**
+
+    In the order to do that run command :
+
+    ```shell
     npm run develop
     ```
 
-3.  **Open the code and start customizing!**
+    Site is now running at http://localhost:8000!
 
-    Your site is now running at http://localhost:8000!
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+## Deploy on server
 
-4.  **Learn more**
+There is several way to deploy this sites on the web.
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+1. **Run command build in your terminal :**
 
-## 🚀 Quick start (Netlify)
+    ```shell
+    npm run build
+    ``` 
+    Then send with SFTP or FTP protocol.
 
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
+2. **Deploy in the UI of your server**
 
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal)
+    Here you have just to connect in your server account and follow the instructions.
+  
+Hope you will like it, you can leave comments if you want, i learn everytime
