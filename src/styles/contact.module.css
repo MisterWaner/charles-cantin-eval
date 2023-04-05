@@ -27,7 +27,7 @@
 }
 
 /* Responsive */
-@media screen and (max-width: 890px) {
+@media screen and (max-width: 992px) {
     .formContainer {
         flex-direction: column;
     }
@@ -35,5 +35,12 @@
         flex-direction: row;
         justify-content: space-between;
         height: 50px;
+    }
+}
+@media screen and (min-width: 320px) and (max-width: 500px) {
+    .contactContainer {
+        flex-direction: column;
+        margin-bottom: 25px;
+        align-items: center;
     }
 }
